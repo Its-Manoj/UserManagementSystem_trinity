@@ -1,0 +1,27 @@
+<div class="menu-overlay" *ngIf="isOpen">
+  <div class="sidebar-panel" [class.open]="isOpen">
+    <div class="sidebar-header">
+      <h2>Menu</h2>
+      <button mat-icon-button class="close-btn" (click)="close()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+
+    <div class="sidebar-links">
+      <button class="menu-link" (click)="goToUserDashboard()">
+        User Management Dashboard
+      </button>
+
+      <button class="menu-link" (click)="goToAnalyticsDashboard()">
+        Analytics Dashboard
+      </button>
+    </div>
+  </div>
+
+  <div class="content-panel">
+    <div class="content-box">
+      <h1>Welcome</h1>
+      <div class="hero-image"></div>
+    </div>
+  </div>
+</div>

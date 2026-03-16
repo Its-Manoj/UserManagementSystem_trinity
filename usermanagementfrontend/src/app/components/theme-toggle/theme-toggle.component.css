@@ -1,0 +1,32 @@
+.theme-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px !important;
+}
+
+/* icon size */
+.toggle-icon {
+  font-size: 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  transition: color 0.2s ease, filter 0.2s ease;
+}
+
+/* Light mode – strong blue */
+body:not(.dark-theme) .toggle-icon {
+  color: #1d4ed8 !important;
+  filter: drop-shadow(0 1px 2px rgba(29, 78, 216, 0.35));
+}
+
+/* Dark mode – bright yellow */
+body.dark-theme .toggle-icon {
+  color: #facc15 !important;
+  filter: drop-shadow(0 1px 2px rgba(250, 204, 21, 0.45));
+}
+body:not(.dark-theme) .theme-toggle-btn {
+  background: rgba(29, 78, 216, 0.08);
+}
+
+body.dark-theme .theme-toggle-btn {
+  background: rgba(250, 204, 21, 0.08);
+}

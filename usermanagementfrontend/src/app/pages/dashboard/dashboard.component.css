@@ -1,0 +1,317 @@
+:host {
+  display: block;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+/* ---------- Toolbar ---------- */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: var(--toolbar-bg) !important;
+  color: var(--toolbar-text) !important;
+}
+
+.toolbar span {
+  color: var(--toolbar-text) !important;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.menu-btn {
+  margin-right: 8px;
+}
+
+.back-btn {
+  margin-right: 8px;
+}
+
+/* ---------- Page content ---------- */
+
+.dashboard-content {
+  padding: 24px 32px;
+}
+
+/* ---------- Top bar ---------- */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.left-section h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-field {
+  width: 320px;
+  height: 55px;
+  margin: 0;
+}
+
+/* ---------- Search field theme ---------- */
+
+.search-field .mat-mdc-text-field-wrapper,
+.search-field .mdc-text-field--outlined,
+.search-field .mdc-text-field--filled {
+  background: var(--input-bg) !important;
+  border-radius: 12px !important;
+}
+
+.search-field input,
+.search-field .mat-mdc-input-element,
+.search-field .mdc-text-field__input {
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  caret-color: var(--text-primary) !important;
+}
+
+.search-field input::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.search-field .mdc-floating-label,
+.search-field .mat-mdc-floating-label,
+.search-field .mat-mdc-select-value,
+.search-field .mat-mdc-select-placeholder,
+.search-field .mat-mdc-select-arrow,
+.search-field .mat-icon {
+  color: var(--text-primary) !important;
+}
+
+.search-field .mdc-notched-outline__leading,
+.search-field .mdc-notched-outline__notch,
+.search-field .mdc-notched-outline__trailing {
+  border-color: var(--border-color) !important;
+}
+
+/* add button */
+.right-section button[mat-fab] {
+  margin-top: 0;
+}
+
+/* ---------- Table ---------- */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.full-width-table {
+  width: 100%;
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Header row */
+.full-width-table .mat-mdc-header-row,
+.full-width-table tr.mat-mdc-header-row {
+  background: var(--surface-2) !important;
+}
+
+/* Body rows */
+.full-width-table .mat-mdc-row,
+.full-width-table tr.mat-mdc-row {
+  background: var(--surface) !important;
+}
+
+.full-width-table .mat-mdc-row:hover,
+.full-width-table tr.mat-mdc-row:hover {
+  background: rgba(148, 163, 184, 0.12) !important;
+}
+
+/* Header cells */
+.full-width-table .mat-mdc-header-cell,
+.full-width-table th.mat-mdc-header-cell {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Data cells */
+.full-width-table .mat-mdc-cell,
+.full-width-table td.mat-mdc-cell {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* remove forced elevation dark look */
+.full-width-table.mat-elevation-z8 {
+  box-shadow: none !important;
+}
+
+.no-data {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--surface);
+}
+
+/* ---------- Paginator ---------- */
+
+mat-paginator {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow);
+  border-radius: 0 0 16px 16px;
+}
+
+.mat-mdc-paginator-container {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  gap: 12px;
+}
+
+mat-paginator,
+mat-paginator *,
+.mat-mdc-paginator,
+.mat-mdc-paginator * {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-icon,
+.mat-mdc-paginator .mat-mdc-select-value,
+.mat-mdc-paginator .mat-mdc-select-arrow {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button svg,
+.mat-mdc-paginator .mat-mdc-paginator-icon {
+  fill: currentColor !important;
+}
+
+/* ---------- Action icons ---------- */
+
+td .edit-btn .mat-icon,
+td .edit-btn mat-icon {
+  color: #22c55e !important;
+}
+
+td .delete-btn .mat-icon,
+td .delete-btn mat-icon {
+  color: #ef4444 !important;
+}
+
+td .edit-btn:hover .mat-icon,
+td .edit-btn:hover mat-icon {
+  color: #16a34a !important;
+}
+
+td .delete-btn:hover .mat-icon,
+td .delete-btn:hover mat-icon {
+  color: #dc2626 !important;
+}
+
+/* ---------- Bottom back ---------- */
+
+.bottom-back-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 18px;
+}
+
+/* ---------- Specific dark-mode refinements ---------- */
+
+body.dark-theme .dashboard-container {
+  background: var(--app-bg) !important;
+}
+
+body.dark-theme .left-section h2 {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .table-wrapper,
+body.dark-theme .full-width-table,
+body.dark-theme .no-data,
+body.dark-theme mat-paginator {
+  background: var(--surface) !important;
+}
+
+body.dark-theme .full-width-table .mat-mdc-header-row,
+body.dark-theme .full-width-table tr.mat-mdc-header-row {
+  background: var(--surface-2) !important;
+}
+
+body.dark-theme .search-field .mat-mdc-text-field-wrapper,
+body.dark-theme .search-field .mdc-text-field--outlined,
+body.dark-theme .search-field .mdc-text-field--filled {
+  background: var(--input-bg) !important;
+}
+
+body.dark-theme .search-field input,
+body.dark-theme .search-field .mat-mdc-input-element,
+body.dark-theme .search-field .mdc-text-field__input {
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .right-section {
+    justify-content: space-between;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 0 12px;
+  }
+
+  .dashboard-content {
+    padding: 16px 12px;
+  }
+
+  .left-section h2 {
+    font-size: 24px;
+  }
+
+  .right-section {
+    gap: 10px;
+  }
+}

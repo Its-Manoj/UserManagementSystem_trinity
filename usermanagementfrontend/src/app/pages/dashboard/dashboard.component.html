@@ -1,0 +1,131 @@
+<div class="dashboard-container">
+  <app-menu-sidebar
+    [isOpen]="isMenuOpen"
+    [currentPage]="'/login'"
+    (closeMenu)="closeMenuPanel()">
+  </app-menu-sidebar>
+
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button class="menu-btn" (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <button
+      *ngIf="navigationStateService.openedFromMenu"
+      mat-icon-button
+      class="back-btn"
+      matTooltip="Back"
+      (click)="goBackToMenu()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <span>User Management Dashboard</span>
+    <span class="spacer"></span>
+    <app-theme-toggle></app-theme-toggle>
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+  <div class="dashboard-content">
+    <div class="top-bar">
+      <div class="left-section">
+        <h2>Registered Users</h2>
+      </div>
+
+      <div class="right-section">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search users</mat-label>
+          <input
+            matInput
+            [(ngModel)]="searchKeyword"
+            (keyup)="onSearch()"
+            placeholder="Search by name, email, mobile..."
+          />
+        </mat-form-field>
+
+        <button mat-fab color="primary" matTooltip="Add User" (click)="addUser()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
+
+        <ng-container matColumnDef="serialNumber">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let user; let i = index">{{ getSerialNumber(i) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobile">
+          <th mat-header-cell *matHeaderCellDef>Mobile</th>
+          <td mat-cell *matCellDef="let user">{{ user.mobile }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef>Gender</th>
+          <td mat-cell *matCellDef="let user">{{ user.gender }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef>City</th>
+          <td mat-cell *matCellDef="let user">{{ user.city }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rolesInterested">
+          <th mat-header-cell *matHeaderCellDef>Roles Interested</th>
+          <td mat-cell *matCellDef="let user">{{ user.rolesInterested.join(', ') }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>Username</th>
+          <td mat-cell *matCellDef="let user">{{ user.username }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let user">
+
+            <button mat-icon-button class="edit-btn" (click)="editUser(user)" matTooltip="Edit">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button class="delete-btn" (click)="deleteUser(user)" matTooltip="Delete">
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <div class="no-data" *ngIf="dataSource.data.length === 0">
+        No users found
+      </div>
+    </div>
+
+    <mat-paginator
+      [length]="totalElements"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+
+    <div class="bottom-back-wrapper" *ngIf="navigationStateService.openedFromMenu">
+      <button mat-raised-button color="primary" (click)="goBackToMenu()">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

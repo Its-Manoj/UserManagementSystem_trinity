@@ -1,0 +1,471 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Light Theme ---------- */
+:root {
+  --app-bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef2ff;
+  --toolbar-bg: #274398;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --toolbar-text: #ffffff;
+  --border-color: #d1d5db;
+  --input-bg: #ffffff;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Dark Theme ---------- */
+body.dark-theme {
+  --app-bg: #0f172a;
+  --surface: #1e293b;
+  --surface-2: #334155;
+  --toolbar-bg: #1d4ed8;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --toolbar-text: #ffffff;
+  --border-color: #475569;
+  --input-bg: #0b1733;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--text-primary);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* ---------- Toolbar ---------- */
+.mat-toolbar,
+.mat-mdc-toolbar {
+  background: var(--toolbar-bg) !important;
+  color: var(--toolbar-text) !important;
+}
+
+/* ---------- Cards / Dialogs ---------- */
+.mat-mdc-card,
+.mat-mdc-dialog-surface {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* ---------- Generic Text ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td {
+  color: inherit;
+}
+
+/* ---------- Form Fields ---------- */
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-text-field-wrapper,
+.mdc-text-field--filled,
+.mdc-text-field--outlined {
+  background-color: var(--input-bg) !important;
+}
+
+.mat-mdc-form-field-input-control,
+.mdc-text-field__input,
+input,
+textarea {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  caret-color: currentColor !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.mat-mdc-floating-label,
+.mdc-floating-label,
+.mat-mdc-select-value,
+.mat-mdc-select-placeholder,
+.mat-mdc-select-arrow,
+.mat-mdc-form-field-icon-suffix,
+.mat-icon {
+  color: var(--text-primary) !important;
+}
+
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__trailing {
+  border-color: var(--border-color) !important;
+}
+
+/* ---------- Select / Dropdown ---------- */
+.mat-mdc-select-panel,
+.mat-mdc-autocomplete-panel {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-option {
+  color: var(--text-primary) !important;
+}
+
+/* ---------- Radio ---------- */
+.mat-mdc-radio-button,
+.mat-mdc-radio-button .mdc-label {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-radio-button .mdc-radio__outer-circle {
+  border-color: var(--text-primary) !important;
+}
+
+.mat-mdc-radio-button .mdc-radio__inner-circle {
+  border-color: #ff4081 !important;
+}
+
+body.dark-theme .mat-mdc-radio-button,
+body.dark-theme .mat-mdc-radio-button .mdc-label,
+body.dark-theme .mat-mdc-radio-button label {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-radio-button .mdc-radio__outer-circle {
+  border-color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-radio-button .mdc-radio__background {
+  opacity: 1 !important;
+}
+
+/* ---------- Checkbox ---------- */
+.mat-mdc-checkbox,
+.mat-mdc-checkbox label {
+  color: var(--text-primary) !important;
+}
+
+/* ---------- Table ---------- */
+.mat-mdc-table {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.mat-mdc-header-row {
+  background: var(--surface-2) !important;
+}
+
+.mat-mdc-row {
+  background: var(--surface) !important;
+}
+
+.mat-mdc-row:hover {
+  background: rgba(148, 163, 184, 0.12) !important;
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+/* ---------- Paginator ---------- */
+.mat-mdc-paginator {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator,
+.mat-mdc-paginator * {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-icon,
+.mat-mdc-paginator .mat-mdc-select-value,
+.mat-mdc-paginator .mat-mdc-select-arrow {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button svg,
+.mat-mdc-paginator .mat-mdc-paginator-icon {
+  fill: currentColor !important;
+}
+
+/* ---------- Buttons ---------- */
+button.mat-mdc-raised-button,
+button.mat-mdc-unelevated-button,
+button.mat-mdc-outlined-button,
+button.mat-mdc-fab,
+button.mat-mdc-mini-fab {
+  box-shadow: var(--shadow) !important;
+}
+
+/* ---------- Dark Theme Paginator Fix ---------- */
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button .mat-icon,
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button svg,
+body.dark-theme .mat-mdc-paginator .mat-mdc-paginator-icon {
+  color: #f8fafc !important;
+  fill: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button[disabled] {
+  color: #cbd5e1 !important;
+  opacity: 0.9 !important;
+}
+
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button[disabled] .mat-icon,
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button[disabled] svg,
+body.dark-theme .mat-mdc-paginator .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+  color: #cbd5e1 !important;
+  fill: #cbd5e1 !important;
+}
+
+/* ---------- Dialog Dark Theme ---------- */
+body.dark-theme .mat-mdc-dialog-surface {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-title,
+body.dark-theme .mat-mdc-dialog-content,
+body.dark-theme .mat-mdc-dialog-actions,
+body.dark-theme .mat-mdc-dialog-content *,
+body.dark-theme .mat-mdc-dialog-actions *,
+body.dark-theme .mat-mdc-dialog-title * {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-text-field-wrapper,
+body.dark-theme .mat-mdc-dialog-surface .mdc-text-field--filled,
+body.dark-theme .mat-mdc-dialog-surface .mdc-text-field--outlined {
+  background-color: #0b1733 !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface input,
+body.dark-theme .mat-mdc-dialog-surface textarea,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-input-element,
+body.dark-theme .mat-mdc-dialog-surface .mdc-text-field__input {
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface input::placeholder,
+body.dark-theme .mat-mdc-dialog-surface textarea::placeholder {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-floating-label,
+body.dark-theme .mat-mdc-dialog-surface .mdc-floating-label,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-select-value,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-select-placeholder,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-select-arrow,
+body.dark-theme .mat-mdc-dialog-surface .mat-icon {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mdc-notched-outline__leading,
+body.dark-theme .mat-mdc-dialog-surface .mdc-notched-outline__notch,
+body.dark-theme .mat-mdc-dialog-surface .mdc-notched-outline__trailing {
+  border-color: #475569 !important;
+}
+
+body.dark-theme .mat-mdc-select-panel {
+  background: #1e293b !important;
+}
+
+body.dark-theme .mat-mdc-option {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-radio-button,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-radio-button .mdc-label,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-radio-button label {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-radio-button .mdc-radio__outer-circle {
+  border-color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-radio-button .mdc-radio__background {
+  opacity: 1 !important;
+}
+
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-checkbox,
+body.dark-theme .mat-mdc-dialog-surface .mat-mdc-checkbox label {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .mat-mdc-dialog-actions .mat-mdc-button,
+body.dark-theme .mat-mdc-dialog-actions .mat-mdc-raised-button,
+body.dark-theme .mat-mdc-dialog-actions .mat-mdc-outlined-button {
+  color: #f8fafc !important;
+}
+
+/* ---------- Signup page exact fix ---------- */
+
+/* Dark mode signup text, input, icon */
+body.dark-theme app-signup .signup-card,
+body.dark-theme app-signup .signup-card h1,
+body.dark-theme app-signup .signup-card h2,
+body.dark-theme app-signup .signup-card .section-title,
+body.dark-theme app-signup .signup-card .mat-mdc-form-field,
+body.dark-theme app-signup .signup-card .mat-mdc-input-element,
+body.dark-theme app-signup .signup-card input,
+body.dark-theme app-signup .signup-card textarea,
+body.dark-theme app-signup .signup-card .mdc-floating-label,
+body.dark-theme app-signup .signup-card .mat-mdc-select-value-text,
+body.dark-theme app-signup .signup-card .mat-mdc-select-arrow,
+body.dark-theme app-signup .signup-card .mat-mdc-select-placeholder,
+body.dark-theme app-signup .signup-card .mat-mdc-select-min-line,
+body.dark-theme app-signup .signup-card .mat-icon,
+body.dark-theme app-signup .signup-card .mat-mdc-form-field-error,
+body.dark-theme app-signup .signup-card .mat-mdc-form-field-hint {
+  color: #ffffff !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-input-element,
+body.dark-theme app-signup .signup-card input,
+body.dark-theme app-signup .signup-card textarea,
+body.dark-theme app-signup .signup-card .mdc-text-field__input {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-text-field-wrapper,
+body.dark-theme app-signup .signup-card .mdc-text-field--outlined {
+  background: #071739 !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-input-element::placeholder,
+body.dark-theme app-signup .signup-card input::placeholder,
+body.dark-theme app-signup .signup-card textarea::placeholder {
+  color: rgba(255, 255, 255, 0.72) !important;
+  opacity: 1 !important;
+}
+
+body.dark-theme app-signup .signup-card .mdc-notched-outline__leading,
+body.dark-theme app-signup .signup-card .mdc-notched-outline__notch,
+body.dark-theme app-signup .signup-card .mdc-notched-outline__trailing {
+  border-color: #4b648f !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-icon-button .mat-icon,
+body.dark-theme app-signup .signup-card button .mat-icon,
+body.dark-theme app-signup .signup-card .mat-icon {
+  color: #ffffff !important;
+}
+
+/* Dark mode signup radio */
+body.dark-theme app-signup .signup-card .radio-group-section,
+body.dark-theme app-signup .signup-card .radio-group,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-form-field,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-label,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button label {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-radio,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-radio__background {
+  opacity: 1 !important;
+}
+
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-radio__outer-circle,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button .mdc-radio__inner-circle,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button.mat-mdc-radio-checked .mdc-radio__outer-circle,
+body.dark-theme app-signup .signup-card .mat-mdc-radio-button.mat-mdc-radio-checked .mdc-radio__inner-circle {
+  border-color: #ffffff !important;
+}
+
+/* Light mode signup text, input, icon */
+body:not(.dark-theme) app-signup .signup-card,
+body:not(.dark-theme) app-signup .signup-card h1,
+body:not(.dark-theme) app-signup .signup-card h2,
+body:not(.dark-theme) app-signup .signup-card .section-title,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-form-field,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-input-element,
+body:not(.dark-theme) app-signup .signup-card input,
+body:not(.dark-theme) app-signup .signup-card textarea,
+body:not(.dark-theme) app-signup .signup-card .mdc-floating-label,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-select-value-text,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-select-arrow,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-select-placeholder,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-select-min-line,
+body:not(.dark-theme) app-signup .signup-card .mat-icon {
+  color: #000000 !important;
+}
+
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-input-element,
+body:not(.dark-theme) app-signup .signup-card input,
+body:not(.dark-theme) app-signup .signup-card textarea,
+body:not(.dark-theme) app-signup .signup-card .mdc-text-field__input {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  caret-color: #000000 !important;
+}
+
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-icon-button .mat-icon,
+body:not(.dark-theme) app-signup .signup-card button .mat-icon,
+body:not(.dark-theme) app-signup .signup-card .mat-icon {
+  color: #000000 !important;
+}
+
+/* Light mode signup radio */
+body:not(.dark-theme) app-signup .signup-card .radio-group-section,
+body:not(.dark-theme) app-signup .signup-card .radio-group,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button .mdc-form-field,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button .mdc-label,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button label {
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button .mdc-radio__outer-circle,
+body:not(.dark-theme) app-signup .signup-card .mat-mdc-radio-button .mdc-radio__inner-circle {
+  border-color: #000000 !important;
+}
+
+/* ---------- Global Action Icon Visibility ---------- */
+.page-actions button,
+.page-actions mat-icon,
+.page-actions .mat-icon {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.page-actions .menu-btn mat-icon,
+.page-actions .menu-btn .mat-icon,
+.page-actions app-theme-toggle button,
+.page-actions app-theme-toggle .mat-mdc-icon-button,
+.page-actions app-theme-toggle .mat-icon {
+  color: #1e3a8a !important;
+}
+
+body.dark-theme .page-actions .menu-btn mat-icon,
+body.dark-theme .page-actions .menu-btn .mat-icon,
+body.dark-theme .page-actions app-theme-toggle button,
+body.dark-theme .page-actions app-theme-toggle .mat-mdc-icon-button,
+body.dark-theme .page-actions app-theme-toggle .mat-icon {
+  color: #ffffff !important;
+}

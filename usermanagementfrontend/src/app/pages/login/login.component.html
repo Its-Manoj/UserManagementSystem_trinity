@@ -1,0 +1,49 @@
+<div class="login-container">
+
+  <div class="page-actions">
+    <button mat-icon-button class="menu-btn" (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <app-theme-toggle></app-theme-toggle>
+  </div>
+
+  <app-menu-sidebar
+    [isOpen]="isMenuOpen"
+    [currentPage]="'/login'"
+    (closeMenu)="closeMenuPanel()">
+  </app-menu-sidebar>
+
+  <mat-card class="login-card">
+    <h2>Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+        <mat-error *ngIf="f['username'].touched && f['username'].hasError('required')">
+          Username is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" />
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="f['password'].touched && f['password'].hasError('required')">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full-width login-btn" type="submit">
+        Login
+      </button>
+
+      <button mat-stroked-button color="accent" class="full-width signup-btn" type="button" (click)="goToSignup()">
+        New user? SignUp
+      </button>
+    </form>
+  </mat-card>
+</div>

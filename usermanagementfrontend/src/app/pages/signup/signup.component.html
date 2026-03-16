@@ -1,0 +1,106 @@
+<div class="signup-container">
+
+  <div class="page-actions">
+    <button mat-icon-button class="menu-btn" (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <app-theme-toggle></app-theme-toggle>
+  </div>
+
+  <app-menu-sidebar
+    [isOpen]="isMenuOpen"
+    [currentPage]="'/signup'"
+    (closeMenu)="closeMenuPanel()">
+  </app-menu-sidebar>
+
+  <mat-card class="signup-card">
+    <div class="card-header">
+      <h1>User Management</h1>
+      <h2>New User Registration</h2>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+      <div class="form-grid">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="f['name'].hasError('required')">Name is required</mat-error>
+          <mat-error *ngIf="f['name'].hasError('minlength')">Minimum 3 characters required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobile" maxlength="10" />
+          <mat-error *ngIf="f['mobile'].hasError('required')">Mobile number is required</mat-error>
+          <mat-error *ngIf="f['mobile'].hasError('pattern')">Enter valid 10 digit mobile number</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="f['email'].hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="f['email'].hasError('pattern')">Email must be in format abc123@gmail.com</mat-error>
+        </mat-form-field>
+
+        <div class="radio-group-section full-width">
+          <label class="section-title">Gender</label>
+          <mat-radio-group formControlName="gender" class="radio-group">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>City</mat-label>
+          <mat-select formControlName="city">
+            <mat-option *ngFor="let city of cities" [value]="city">{{ city }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="f['city'].hasError('required')">City is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Roles Interested</mat-label>
+          <mat-select formControlName="rolesInterested" multiple>
+            <mat-option *ngFor="let role of rolesList" [value]="role">{{ role }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="f['rolesInterested'].hasError('required')">Select at least one role</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" />
+          <mat-error *ngIf="f['username'].hasError('required')">Username is required</mat-error>
+          <mat-error *ngIf="f['username'].hasError('pattern')">
+            Username must start with capital letter and contain only letters and numbers
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" />
+          <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="f['password'].hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="f['password'].hasError('pattern')">
+            Password must start with capital letter, contain number and special character, and special character must not be at start or end
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" class="full-width submit-btn" type="submit">
+          Sign Up
+        </button>
+
+        <button mat-stroked-button color="accent" class="full-width login-btn" type="button" (click)="goToLogin()">
+          Login
+        </button>
+      </div>
+
+    </form>
+  </mat-card>
+</div>
